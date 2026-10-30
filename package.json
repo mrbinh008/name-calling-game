@@ -10,7 +10,8 @@
     "preview": "vite preview --host 0.0.0.0",
     "test": "node --import ./tests/register-typescript.js --test --test-isolation=none tests/*.test.js",
     "test:e2e": "playwright test",
-    "deploy": "npm run build && wrangler pages deploy dist",
+    "deploy": "npm run build && wrangler deploy",
+    "deploy:pages": "npm run build && wrangler pages deploy dist",
     "deploy:preview": "npm run build && wrangler pages deploy dist --branch=preview",
     "format:check": "prettier --check src tests scripts vite.config.ts playwright.config.ts tsconfig.json package.json wrangler.json README.md SPEC.md"
   },
