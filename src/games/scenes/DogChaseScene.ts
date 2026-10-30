@@ -190,6 +190,13 @@ export class DogChaseScene extends AnimatedScene {
   private chaChaOffsetFrom = 0;
   private danceOriginX = 0;
 
+  protected override getStageSize(
+    width: number,
+    height: number,
+  ): { width: number; height: number } {
+    return { width: 1600, height: Math.round((1600 * height) / width) };
+  }
+
   static async create(
     canvas: HTMLCanvasElement,
     options: SceneOptions,
@@ -200,23 +207,31 @@ export class DogChaseScene extends AnimatedScene {
   getStatus(): string {
     if (!this.round || this.phase === "cho")
       return "Mực đang ngủ… Cả lớp đi thật khẽ nhé!";
-    if (this.phase === "ngu" || this.phase === "giaTinh")
-      return "Suỵt… đừng làm Mực thức giấc!";
+    if (this.phase === "ngu")
+      return "Suỵt… Cả lớp nhón chân rón rén, đừng để Mực thức!";
+    if (this.phase === "giaTinh") return "Á! Có bạn hắt xì! Nín thở mau!";
     if (this.phase === "tinh" || this.phase === "gam" || this.phase === "sua")
-      return "Á! Mực dậy rồi!";
-    if (this.phase === "chay" || this.phase === "ngui" || this.phase === "lao")
-      return "Chạy mau! Mực đang đuổi theo!";
-    if (this.phase === "doiMat") return "Mực đã dồn được một bạn vào góc!";
-    return "Mực và bạn nhảy vũ điệu Cha-Cha chúc mừng!";
+      return "Ôi chết rồi! Mực dậy và sủa vang hẻm!";
+    if (this.phase === "chay") return "Chạy mau! Mực đang đuổi theo sát nút!";
+    if (this.phase === "ngui")
+      return "Cua gấp! Mực phanh gấp trượt chân tóe khói!";
+    if (this.phase === "lao") return "Mực tung mình vồ tới! Chạy đi chờ chi!";
+    if (this.phase === "doiMat")
+      return `Mực đã dồn được bạn ${this.targetStudent?.name ?? "học sinh"} vào ngõ cụt!`;
+    return "Mực và bạn cùng nhảy vũ điệu Cha-Cha chúc mừng!";
   }
 
   protected getSoundCues(): StoryCue[] {
     return [
+      { time: this.duration * 0.04, sound: "/games/dog-chase/am/buoc.mp3" },
       { time: this.duration * 0.1, sound: "/games/dog-chase/am/ngay.mp3" },
+      { time: this.duration * 0.14, sound: "/games/dog-chase/am/buoc.mp3" },
       { time: this.duration * 0.22, sound: "/games/dog-chase/am/hatxi.mp3" },
       { time: this.duration * 0.32, sound: "/games/dog-chase/am/chit.mp3" },
       { time: this.duration * 0.36, sound: "/games/dog-chase/am/gau.mp3" },
-      { time: this.duration * 0.45, sound: "/games/dog-chase/am/kit.mp3" },
+      { time: this.duration * 0.45, sound: "/games/dog-chase/am/vut.mp3" },
+      { time: this.duration * 0.55, sound: "/games/dog-chase/am/kit.mp3" },
+      { time: this.duration * 0.63, sound: "/games/dog-chase/am/gau.mp3" },
       { time: this.duration * 0.72, sound: "/games/dog-chase/am/tim.mp3" },
       { time: this.duration * 0.84, sound: "/games/dog-chase/am/bop.mp3" },
       { time: this.duration * 0.88, sound: "/games/dog-chase/am/ken-giay.mp3" },
@@ -231,7 +246,10 @@ export class DogChaseScene extends AnimatedScene {
     const count = this.actors.length;
     const isMultiRow = count > 8;
     const cols = isMultiRow ? Math.min(3, Math.ceil(count / 15)) : 1;
-    const startX = this.dog.x - 40;
+    const stageH = this.stageHeight || 900;
+    const groundBase = stageH - 20;
+    const groundY = stageH - 180;
+    const startX = this.dog.x - 300;
 
     this.students = this.actors.map((name, index) => {
       const selected = this.isSelected(name);
@@ -240,13 +258,13 @@ export class DogChaseScene extends AnimatedScene {
       let x: number;
       let y: number;
       if (cols === 1) {
-        x = startX - 105 * index;
-        y = 700 + (index % 2) * 30 + (index % 3) * 6;
+        x = startX - 95 * index;
+        y = groundY + (index % 2) * 25 + (index % 3) * 6;
       } else {
         const col = Math.floor(index / cols);
         const row = index % cols;
-        x = startX + 200 - 112 * col - (row % 2) * 56;
-        y = 820 - 70 * row;
+        x = startX - 95 * col - (row % 2) * 45;
+        y = groundBase - 75 - 65 * row;
       }
       return {
         name,
@@ -256,8 +274,8 @@ export class DogChaseScene extends AnimatedScene {
         y,
         targetX: x,
         targetY: y,
-        v: 140,
-        targetV: 140,
+        v: 55, // sneaking speed
+        targetV: 55,
         direction: 1,
         action: "sneak",
         frame: (index * 2) % 8,
@@ -296,16 +314,18 @@ export class DogChaseScene extends AnimatedScene {
   }
 
   private resetChaseState(): void {
+    const stageH = this.stageHeight || 900;
+    const stageW = this.stageWidth || 1600;
     this.dog = {
       x: 640,
-      y: 880,
+      y: stageH - 20,
       v: 0,
       direction: 1,
       action: "sleep",
       frame: 0,
       jumpY: 0,
     };
-    this.cameraX = this.dog.x - 0.45 * 1600;
+    this.cameraX = this.dog.x - 0.45 * stageW;
     this.slippers = [];
     this.confetti = [];
     this.dustPuffs = [];
@@ -328,6 +348,7 @@ export class DogChaseScene extends AnimatedScene {
   private finishChaseInstantly(): void {
     this.setPhase("xong");
     const target = this.targetStudent;
+    const stageW = this.stageWidth || 1600;
     if (target) {
       target.action = "dance";
       target.direction = 1;
@@ -338,7 +359,7 @@ export class DogChaseScene extends AnimatedScene {
       this.dog.action = "dance";
       this.dog.direction = 1;
       this.dog.v = 0;
-      this.cameraX = target.x + 82.5 - 800;
+      this.cameraX = target.x + 82.5 - stageW / 2;
     }
     this.slippers.forEach((s) => {
       s.landed = true;
@@ -348,9 +369,10 @@ export class DogChaseScene extends AnimatedScene {
   }
 
   private spawnConfetti(): void {
+    const stageW = this.stageWidth || 1600;
     for (let i = 0; i < 140; i++) {
       this.confetti.push({
-        x: this.cameraX + 1600 * (0.15 + 0.7 * Math.random()),
+        x: this.cameraX + stageW * (0.15 + 0.7 * Math.random()),
         y: -20 - 300 * Math.random(),
         vx: (Math.random() - 0.5) * 300,
         vy: 120 + 200 * Math.random(),
@@ -392,14 +414,47 @@ export class DogChaseScene extends AnimatedScene {
 
   private syncTimelineToPhase(progress: number): void {
     if (this.phase === "xong") return;
-    if (progress < 0.1) {
+    const stageW = this.stageWidth || 1600;
+    const stageH = this.stageHeight || 900;
+
+    if (progress < 0.22) {
       if (this.phase !== "ngu") this.setPhase("ngu");
-    } else if (progress < 0.28) {
+      // Early sneaking narrative
+      if (
+        progress < 0.08 &&
+        this.students.length > 0 &&
+        this.dialogs.length === 0
+      ) {
+        this.triggerDialog(this.students[0], "Suỵt! Mực đang ngủ say đó…", 1.8);
+      } else if (
+        progress >= 0.12 &&
+        progress < 0.16 &&
+        this.dialogs.length === 0
+      ) {
+        const midStudent = this.students[Math.min(2, this.students.length - 1)];
+        this.triggerDialog(midStudent, "Nhón chân đi thật khẽ nha…", 1.8);
+      } else if (
+        progress >= 0.16 &&
+        progress < 0.2 &&
+        this.floatingTexts.length === 0
+      ) {
+        this.triggerFloatingText(
+          "Rón rén…",
+          this.dog.x - 180,
+          this.dog.y - 140,
+          36,
+          "#16a34a",
+        );
+      }
+    } else if (progress < 0.32) {
       if (this.phase !== "giaTinh") {
         this.setPhase("giaTinh");
+        this.students.forEach((s) => {
+          s.v = 0;
+          s.action = "scared";
+        });
         if (this.bumpStudent) {
           this.bumpStudent.jumpV = 420;
-          this.bumpStudent.action = "scared";
           this.triggerFloatingText(
             "HẮT XÌÌ!",
             this.bumpStudent.x,
@@ -407,11 +462,17 @@ export class DogChaseScene extends AnimatedScene {
             56,
             "#b45309",
           );
+          this.triggerDialog(this.bumpStudent, "Ui chết rồi!", 1.2);
         }
       }
-    } else if (progress < 0.34) {
+    } else if (progress < 0.36) {
       if (this.phase !== "tinh") {
         this.setPhase("tinh");
+        this.dog.action = "growl";
+        this.students.forEach((s) => {
+          s.v = 0;
+          s.action = "scared";
+        });
         if (this.bumpStudent) {
           this.chickenX = this.bumpStudent.x + 30;
           this.chickenY = this.bumpStudent.y + 4;
@@ -423,42 +484,42 @@ export class DogChaseScene extends AnimatedScene {
             58,
             "#dc2626",
           );
-          this.triggerDialog(this.bumpStudent, "Ơ... chết rồi!", 1.2);
+          this.triggerDialog(this.bumpStudent, "Thôi xong rồi!", 1.2);
         }
+        this.triggerDialog("dog", "Grừ... Đứa nào làm ồn?!", 1.5);
       }
-    } else if (progress < 0.42) {
-      if (this.phase !== "gam") {
-        this.setPhase("gam");
-        this.dog.action = "growl";
-        this.triggerDialog("dog", "Grừ... Đứa nào chưa học bài?", 2.0);
-        this.students.forEach((s) => {
-          s.action = "scared";
-          s.v = 0;
-        });
-      }
-    } else if (progress < 0.46) {
+    } else if (progress < 0.44) {
       if (this.phase !== "sua") {
         this.setPhase("sua");
         this.dog.action = "bark";
-        this.screenShake = 20;
-        this.triggerFloatingText("GÂU!", 800, 360, 180, "#dc2626", true);
+        this.screenShake = 22;
+        this.triggerFloatingText(
+          "GÂU!",
+          stageW / 2,
+          stageH * 0.38,
+          180,
+          "#dc2626",
+          true,
+        );
         this.students.forEach((s) => {
           s.jumpV = 650;
+          s.action = "scared";
         });
+        const runner = this.students.find((s) => s !== this.targetStudent);
+        if (runner) {
+          this.triggerDialog(runner, "Á á á! Chạy mauuu!", 1.2);
+        }
       }
-    } else if (progress < 0.74) {
-      if (
-        this.phase !== "chay" &&
-        this.phase !== "ngui" &&
-        this.phase !== "lao"
-      ) {
+    } else if (progress < 0.54) {
+      // Chase Stage 1: Explosive Sprint & Scramble
+      if (this.phase !== "chay") {
         this.setPhase("chay");
         this.students.forEach((s, idx) => {
           s.action = "run";
-          s.targetV = 320 + (idx % 4) * 40;
+          s.targetV = 360 + (idx % 4) * 35;
           s.v = s.targetV;
           s.direction = 1;
-          if (idx < 4) {
+          if (idx < 5) {
             this.slippers.push({
               x: s.x,
               y: s.y - 6,
@@ -474,11 +535,11 @@ export class DogChaseScene extends AnimatedScene {
         if (this.treeClimber) {
           this.treeClimber.action = "cling";
           this.treeClimber.x = 220;
-          this.treeClimber.y = 580;
+          this.treeClimber.y = stageH - 320;
           this.triggerDialog(
             this.treeClimber,
             TREE_DIALOGS[Math.floor(Math.random() * TREE_DIALOGS.length)],
-            1.5,
+            1.8,
           );
         }
         const runner = this.students.find(
@@ -488,38 +549,106 @@ export class DogChaseScene extends AnimatedScene {
           this.triggerDialog(
             runner,
             PANIC_DIALOGS[Math.floor(Math.random() * PANIC_DIALOGS.length)],
-            1.2,
+            1.5,
           );
         }
         this.dog.action = "run";
+        this.dog.v = 440;
+      }
+    } else if (progress < 0.62) {
+      // Chase Stage 2: Corner Drift & Screeching Dog Skid Brake!
+      if (this.phase !== "ngui") {
+        this.setPhase("ngui");
+        this.dog.action = "brake";
+        this.dog.v = 180;
+        this.screenShake = 14;
+        this.triggerFloatingText(
+          "KÍTTT!",
+          this.dog.x + 80,
+          this.dog.y - 120,
+          56,
+          "#ea580c",
+        );
+        this.triggerDialog(
+          "dog",
+          MISS_DIALOGS[Math.floor(Math.random() * MISS_DIALOGS.length)],
+          1.2,
+        );
+        for (let k = 0; k < 6; k++) {
+          this.dustPuffs.push({
+            x: this.dog.x + 20 + k * 18,
+            y: this.dog.y - 6,
+            radius: 12 + Math.random() * 10,
+            time: 0,
+          });
+        }
+        const runner = this.students.find(
+          (s) => s !== this.targetStudent && s !== this.treeClimber,
+        );
+        if (runner) {
+          this.triggerDialog(
+            runner,
+            CORNER_DIALOGS[Math.floor(Math.random() * CORNER_DIALOGS.length)],
+            1.2,
+          );
+        }
+      }
+    } else if (progress < 0.74) {
+      // Chase Stage 3: Dog Pounce & Leap!
+      if (this.phase !== "lao") {
+        this.setPhase("lao");
+        this.dog.action = "jump";
+        this.dog.v = 520;
+        this.triggerFloatingText(
+          "VỒ!",
+          this.dog.x + 60,
+          this.dog.y - 140,
+          68,
+          "#dc2626",
+        );
+        this.triggerDialog("dog", "Bắt nè!", 1.2);
+        if (this.targetStudent) {
+          this.triggerDialog(this.targetStudent, "Sao lại là tui?!", 1.2);
+        }
       }
     } else if (progress < 0.82) {
+      // Stage 4: Cornered against the wall!
       if (this.phase !== "doiMat") {
         this.setPhase("doiMat");
         this.dog.action = "growl";
         this.dog.v = 0;
+        this.dog.jumpY = 0;
         if (this.targetStudent) {
           this.targetStudent.action = "scared";
           this.targetStudent.v = 0;
           this.dog.x = this.targetStudent.x + 220;
           this.triggerDialog(
             this.targetStudent,
-            "Em... em chưa chuẩn bị!",
+            "Em... em chưa kịp học bài!",
             1.2,
           );
         }
+        this.triggerDialog("dog", "Bắt được rồi nha!", 1.2);
       }
     } else if (progress < 0.88) {
       if (this.phase !== "bat") {
         this.setPhase("bat");
         this.screenFlash = 1;
-        this.triggerFloatingText("BẮT ĐƯỢC!", 800, 300, 140, "#dc2626", true);
+        this.triggerFloatingText(
+          "BẮT ĐƯỢC!",
+          stageW / 2,
+          stageH * 0.35,
+          140,
+          "#dc2626",
+          true,
+        );
         if (this.targetStudent) {
           this.danceOriginX = Math.max(530, this.targetStudent.x);
           this.targetStudent.x = this.danceOriginX;
           this.targetStudent.action = "dance";
           this.dog.x = this.danceOriginX + 165;
           this.dog.action = "dance";
+          this.dog.jumpY = 0;
         }
       }
     } else {
@@ -529,7 +658,7 @@ export class DogChaseScene extends AnimatedScene {
         this.triggerFloatingText(
           "BỘP!",
           this.danceOriginX + 82,
-          700,
+          stageH - 220,
           65,
           "#ea580c",
         );
@@ -570,13 +699,14 @@ export class DogChaseScene extends AnimatedScene {
     }
 
     // Confetti falling
+    const stageH = this.stageHeight || 900;
     for (const piece of this.confetti) {
       piece.time += dt;
       piece.x += piece.vx * dt;
       piece.y += piece.vy * dt;
       piece.rotation += 6 * dt;
     }
-    this.confetti = this.confetti.filter((p) => p.y < 950);
+    this.confetti = this.confetti.filter((p) => p.y < stageH + 60);
 
     // Dust particles
     for (const dust of this.dustPuffs) {
@@ -590,35 +720,80 @@ export class DogChaseScene extends AnimatedScene {
       student.jumpV -= 2200 * dt;
       student.jumpY = Math.max(0, student.jumpY + student.jumpV * dt);
       if (student.jumpY === 0) student.jumpV = 0;
-      student.frame += 10 * dt;
-      if (
-        (this.phase === "chay" || this.phase === "lao") &&
+
+      if (this.phase === "ngu") {
+        student.x += student.direction * student.v * dt;
+        student.frame += 7 * dt;
+      } else if (
+        this.phase === "giaTinh" ||
+        this.phase === "tinh" ||
+        this.phase === "gam" ||
+        this.phase === "sua"
+      ) {
+        student.frame += 4 * dt;
+      } else if (
+        (this.phase === "chay" ||
+          this.phase === "ngui" ||
+          this.phase === "lao") &&
         student !== this.treeClimber
       ) {
         student.x += student.direction * student.v * dt;
         student.y += (student.targetY - student.y) * Math.min(1, 2.5 * dt);
+        student.frame += 14 * dt;
+      } else {
+        student.frame += 10 * dt;
       }
     }
 
     // Dog state updates
-    this.dog.frame += 10 * dt;
-    if (this.phase === "chay" || this.phase === "lao") {
+    if (this.phase === "ngu") {
+      this.dog.frame += 4 * dt;
+    } else if (this.phase === "chay") {
+      this.dog.action = "run";
+      this.dog.frame += 16 * dt;
       const target = this.targetStudent ?? this.students[0];
       if (target) {
         this.dog.x +=
-          (target.x - 210 - this.dog.x) * Math.min(1, 2.8 * dt) +
-          this.dog.v * dt * 0.2;
-        this.dog.y += (target.y - this.dog.y) * Math.min(1, 2.2 * dt);
-        if (Math.random() < 0.05 && this.dialogs.length < 2) {
-          const dialog =
-            Math.random() < 0.5
-              ? MISS_DIALOGS[Math.floor(Math.random() * MISS_DIALOGS.length)]
-              : CORNER_DIALOGS[
-                  Math.floor(Math.random() * CORNER_DIALOGS.length)
-                ];
-          this.triggerDialog("dog", dialog, 0.9);
+          (target.x - 220 - this.dog.x) * Math.min(1, 3.2 * dt) +
+          this.dog.v * dt * 0.15;
+        this.dog.y += (target.y - this.dog.y) * Math.min(1, 2.5 * dt);
+        if (Math.random() < 0.4) {
+          this.dustPuffs.push({
+            x: this.dog.x - 30,
+            y: this.dog.y - 6,
+            radius: 10 + Math.random() * 8,
+            time: 0,
+          });
         }
       }
+    } else if (this.phase === "ngui") {
+      // Braking and skidding around corner
+      this.dog.action = "brake";
+      this.dog.frame += 8 * dt;
+      this.dog.x += 140 * dt;
+      if (Math.random() < 0.6) {
+        this.dustPuffs.push({
+          x: this.dog.x + 30 + Math.random() * 20,
+          y: this.dog.y - 4,
+          radius: 14 + Math.random() * 10,
+          time: 0,
+        });
+      }
+    } else if (this.phase === "lao") {
+      // Leaping pounce!
+      this.dog.action = "jump";
+      this.dog.frame += 10 * dt;
+      const target = this.targetStudent ?? this.students[0];
+      if (target) {
+        this.dog.x +=
+          (target.x - 170 - this.dog.x) * Math.min(1, 3.8 * dt) +
+          this.dog.v * dt * 0.2;
+        this.dog.y += (target.y - this.dog.y) * Math.min(1, 2.5 * dt);
+      }
+      const pounceArc = Math.sin((this.phaseTime * 4) % Math.PI) * 55;
+      this.dog.jumpY = pounceArc;
+    } else {
+      this.dog.frame += 10 * dt;
     }
 
     // Cha-cha dance logic
@@ -669,11 +844,11 @@ export class DogChaseScene extends AnimatedScene {
     this.floatingTexts = this.floatingTexts.filter((t) => t.time < t.duration);
 
     // Smooth camera tracking
-    let targetCamX = this.dog.x - 700;
+    let targetCamX = this.dog.x - this.stageWidth * 0.44;
     if (this.phase === "nhay" || this.phase === "xong") {
-      targetCamX = this.danceOriginX + 82 - 800;
+      targetCamX = this.danceOriginX + 82 - this.stageWidth / 2;
     } else if (this.phase === "cho") {
-      targetCamX = this.dog.x - 800;
+      targetCamX = this.dog.x - this.stageWidth / 2;
     }
     this.cameraX += (targetCamX - this.cameraX) * Math.min(1, 3.5 * dt);
   }
@@ -780,7 +955,7 @@ export class DogChaseScene extends AnimatedScene {
     // 12. Screen Flash on Impact
     if (this.screenFlash > 0) {
       context.fillStyle = `rgba(255, 255, 255, ${0.6 * this.screenFlash})`;
-      context.fillRect(0, 0, 1600, 900);
+      context.fillRect(0, 0, this.stageWidth, this.stageHeight);
     }
 
     context.restore();
@@ -790,15 +965,16 @@ export class DogChaseScene extends AnimatedScene {
     const bg = this.artwork.get("background");
     const shelter = this.artwork.get("shelter") ?? bg;
     if (!bg) return;
-    const tileW = (bg.image.width / bg.image.height) * 900;
+    const tileW = (bg.image.width / bg.image.height) * this.stageHeight;
     const step = tileW - 160;
     const minTile = Math.floor((this.cameraX - 160) / step);
-    const maxTile = Math.floor((this.cameraX + 1600) / step);
+    const maxTile = Math.floor((this.cameraX + this.stageWidth + 160) / step);
 
     for (let t = minTile; t <= maxTile; t++) {
       const art = t % 2 === 0 ? bg : shelter;
       const x = t * step - this.cameraX;
-      if (art) this.context.drawImage(art.image, x, 0, tileW + 2, 900);
+      if (art)
+        this.context.drawImage(art.image, x, 0, tileW + 2, this.stageHeight);
     }
   }
 
@@ -807,15 +983,19 @@ export class DogChaseScene extends AnimatedScene {
     if (!fg) return;
     const { context } = this;
     const img = fg.image;
-    const h = 0.45 * 900;
+    const h = 0.45 * this.stageHeight;
     const w = (img.width / img.height) * h;
-    const y = 900 - h;
+    const y = this.stageHeight - h;
     context.drawImage(img, -this.cameraX * 0.2 - 20, y, w, h);
   }
 
   private renderStudentActor(student: StudentActor): void {
     const screenX = student.x - this.cameraX;
-    const screenY = student.y - student.jumpY;
+    const sneakBob =
+      student.action === "sneak"
+        ? Math.abs(Math.sin(student.frame * 0.6)) * 6
+        : 0;
+    const screenY = student.y - student.jumpY - sneakBob;
     const height = 230 * student.scale;
 
     this.painter.shadow(screenX, student.y, 48 * student.scale);
@@ -824,7 +1004,7 @@ export class DogChaseScene extends AnimatedScene {
       y: screenY,
       height,
       time: student.frame * 0.1,
-      fps: student.action === "run" ? 14 : 8,
+      fps: student.action === "run" ? 16 : 8,
       flipX: student.direction < 0,
     });
 
@@ -855,7 +1035,14 @@ export class DogChaseScene extends AnimatedScene {
       y: screenY,
       height,
       time: this.dog.frame * 0.1,
-      fps: this.dog.action === "run" ? 14 : 7,
+      fps:
+        this.dog.action === "run"
+          ? 14
+          : this.dog.action === "brake"
+            ? 12
+            : this.dog.action === "jump"
+              ? 10
+              : 7,
       flipX: this.dog.direction < 0,
     });
   }
