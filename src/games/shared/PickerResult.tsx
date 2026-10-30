@@ -1,5 +1,5 @@
-import Modal from "../../components/Modal.tsx";
-import type { GameDefinition } from "../catalog.ts";
+import Modal from "@/components/Modal.tsx";
+import type { GameDefinition } from "@/games/catalog.ts";
 
 interface PickerResultProps {
   definition: GameDefinition;

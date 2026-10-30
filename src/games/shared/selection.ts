@@ -1,4 +1,4 @@
-import type { RandomSource } from "../../game/types.ts";
+import type { RandomSource } from "@/game/types.ts";
 
 export interface PickerRound {
   selectedNames: string[];

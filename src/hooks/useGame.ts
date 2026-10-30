@@ -1,11 +1,11 @@
 import type { RefObject } from "react";
-import type { Village } from "../game/types.ts";
-import type { VillageScene } from "../game/scene.ts";
+import type { Village } from "@/game/types.ts";
+import type { VillageScene } from "@/game/scene.ts";
 export type GamePhase = "lobby" | "playing" | "result" | "empty";
 export type GameController = ReturnType<typeof useGame>;
 import { useCallback, useEffect, useState } from "react";
-import { createRound } from "../game/world.ts";
-import { villageAudio } from "../game/audio.ts";
+import { createRound } from "@/game/world.ts";
+import { villageAudio } from "@/game/audio.ts";
 export function useGame(
   village: Village,
   sceneRef: RefObject<VillageScene | null>,

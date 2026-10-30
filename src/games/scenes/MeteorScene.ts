@@ -1,11 +1,11 @@
-import manifest from "../assets/meteor.json" with { type: "json" };
+import manifest from "@/games/assets/meteor.json" with { type: "json" };
 import {
   AnimatedScene,
   type SceneOptions,
   type StoryCue,
-} from "../shared/AnimatedScene.ts";
-import { loadArtwork } from "../shared/artwork.ts";
-import { clamp01 } from "../../game/geometry.ts";
+} from "@/games/shared/AnimatedScene.ts";
+import { loadArtwork } from "@/games/shared/artwork.ts";
+import { clamp01 } from "@/game/geometry.ts";
 
 const WORLD_WIDTH = 1536;
 const WORLD_HEIGHT = 1024;

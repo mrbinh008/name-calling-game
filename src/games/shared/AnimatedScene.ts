@@ -1,8 +1,8 @@
-import { createDisplayNames } from "../../game/names.ts";
-import type { GenderByName } from "../../game/types.ts";
-import type { ArtworkBank } from "./artwork.ts";
-import { CanvasPainter } from "./CanvasPainter.ts";
-import { shuffleNames, type PickerRound } from "./selection.ts";
+import { createDisplayNames } from "@/game/names.ts";
+import type { GenderByName } from "@/game/types.ts";
+import type { ArtworkBank } from "@/games/shared/artwork.ts";
+import { CanvasPainter } from "@/games/shared/CanvasPainter.ts";
+import { shuffleNames, type PickerRound } from "@/games/shared/selection.ts";
 
 export interface StoryCue {
   time: number;

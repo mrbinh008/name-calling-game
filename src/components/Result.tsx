@@ -5,7 +5,7 @@ interface ResultProps {
   onNext: () => void;
   onHome: () => void;
 }
-import Modal from "./Modal.tsx";
+import Modal from "@/components/Modal.tsx";
 export default function Result({
   selected,
   calledCount,

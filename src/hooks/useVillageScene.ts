@@ -1,11 +1,11 @@
 import type { RefObject } from "react";
-import type { Village } from "../game/types.ts";
+import type { Village } from "@/game/types.ts";
 type SceneStatus = "loading" | "ready" | "error";
 import { useEffect, useRef, useState } from "react";
-import { VillageScene } from "../game/scene.ts";
-import { villageAudio } from "../game/audio.ts";
-import { gameAudio } from "../game/sound.ts";
-import { drawSpeech } from "../game/speech.ts";
+import { VillageScene } from "@/game/scene.ts";
+import { villageAudio } from "@/game/audio.ts";
+import { gameAudio } from "@/game/sound.ts";
+import { drawSpeech } from "@/game/speech.ts";
 export function useVillageScene(
   village: Village,
   onResult: () => void,

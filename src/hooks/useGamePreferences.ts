@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { villageAudio } from "../game/audio.ts";
-import { gameAudio } from "../game/sound.ts";
+import { villageAudio } from "@/game/audio.ts";
+import { gameAudio } from "@/game/sound.ts";
 export interface BackgroundAudio {
   startBackground(): void;
   stopBackground(): void;

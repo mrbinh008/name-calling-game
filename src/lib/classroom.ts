@@ -1,4 +1,4 @@
-import type { Gender, GenderByName } from "../game/types.ts";
+import type { Gender, GenderByName } from "@/game/types.ts";
 export interface Classroom {
   title: string;
   isDemo: boolean;

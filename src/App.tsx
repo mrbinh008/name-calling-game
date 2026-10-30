@@ -1,4 +1,4 @@
-import type { Classroom } from "./lib/classroom.ts";
+import type { Classroom } from "@/lib/classroom.ts";
 import {
   lazy,
   Suspense,
@@ -6,13 +6,13 @@ import {
   useState,
   useSyncExternalStore,
 } from "react";
-import { loadClassroom, saveClassroom } from "./lib/classroom.ts";
-import GameLibrary from "./components/GameLibrary.tsx";
-import RosterEditor from "./components/RosterEditor.tsx";
-import { getGameDefinition, parseGameRoute } from "./games/catalog.ts";
+import { loadClassroom, saveClassroom } from "@/lib/classroom.ts";
+import GameLibrary from "@/components/GameLibrary.tsx";
+import RosterEditor from "@/components/RosterEditor.tsx";
+import { getGameDefinition, parseGameRoute } from "@/games/catalog.ts";
 
-const VillageGame = lazy(() => import("./components/Game.tsx"));
-const AnimatedGame = lazy(() => import("./games/AnimatedGame.tsx"));
+const VillageGame = lazy(() => import("@/components/Game.tsx"));
+const AnimatedGame = lazy(() => import("@/games/AnimatedGame.tsx"));
 
 function subscribeToRoute(onChange: () => void): () => void {
   window.addEventListener("hashchange", onChange);

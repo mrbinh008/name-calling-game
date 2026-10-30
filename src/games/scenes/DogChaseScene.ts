@@ -1,10 +1,10 @@
-import manifest from "../assets/dog-chase.json" with { type: "json" };
+import manifest from "@/games/assets/dog-chase.json" with { type: "json" };
 import {
   AnimatedScene,
   type SceneOptions,
   type StoryCue,
-} from "../shared/AnimatedScene.ts";
-import { loadArtwork } from "../shared/artwork.ts";
+} from "@/games/shared/AnimatedScene.ts";
+import { loadArtwork } from "@/games/shared/artwork.ts";
 
 interface ChaChaBeat {
   lech: number;

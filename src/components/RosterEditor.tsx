@@ -1,13 +1,13 @@
 import type { FormEvent } from "react";
-import type { Classroom } from "../lib/classroom.ts";
+import type { Classroom } from "@/lib/classroom.ts";
 interface RosterEditorProps {
   classroom: Classroom;
   onSave: (classroom: Classroom) => void;
   onClose: () => void;
 }
 import { useState } from "react";
-import Modal from "./Modal.tsx";
-import { DEMO_CLASSROOM, parseRoster } from "../lib/classroom.ts";
+import Modal from "@/components/Modal.tsx";
+import { DEMO_CLASSROOM, parseRoster } from "@/lib/classroom.ts";
 export default function RosterEditor({
   classroom,
   onSave,

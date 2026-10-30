@@ -1,5 +1,5 @@
-import type { GameDefinition } from "../catalog.ts";
-import type { Classroom } from "../../lib/classroom.ts";
+import type { GameDefinition } from "@/games/catalog.ts";
+import type { Classroom } from "@/lib/classroom.ts";
 
 interface PickerHeaderProps {
   definition: GameDefinition;

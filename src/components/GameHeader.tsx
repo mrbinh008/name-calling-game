@@ -1,7 +1,7 @@
 import type { Dispatch, SetStateAction } from "react";
-import type { Classroom } from "../lib/classroom.ts";
-import type { GameController } from "../hooks/useGame.ts";
-import type { GamePanel } from "./Game.tsx";
+import type { Classroom } from "@/lib/classroom.ts";
+import type { GameController } from "@/hooks/useGame.ts";
+import type { GamePanel } from "@/components/Game.tsx";
 interface GameHeaderProps {
   classroom: Classroom;
   game: GameController;

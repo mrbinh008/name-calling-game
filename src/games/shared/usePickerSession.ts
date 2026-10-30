@@ -1,7 +1,10 @@
 import { useCallback, useEffect, useState, type RefObject } from "react";
-import type { AnimatedScene } from "./AnimatedScene.ts";
-import { selectPickerRound, type PickerRound } from "./selection.ts";
-import type { PickerAudio } from "./PickerAudio.ts";
+import type { AnimatedScene } from "@/games/shared/AnimatedScene.ts";
+import {
+  selectPickerRound,
+  type PickerRound,
+} from "@/games/shared/selection.ts";
+import type { PickerAudio } from "@/games/shared/PickerAudio.ts";
 
 export type PickerPhase = "lobby" | "playing" | "result";
 export type PickerSession = ReturnType<typeof usePickerSession>;

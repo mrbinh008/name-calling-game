@@ -1,4 +1,4 @@
-import type { GameController } from "../hooks/useGame.ts";
+import type { GameController } from "@/hooks/useGame.ts";
 interface LobbyProps {
   game: GameController;
   present: number;

@@ -5,20 +5,20 @@ import {
   useState,
   type CSSProperties,
 } from "react";
-import type { Classroom } from "../lib/classroom.ts";
-import type { AnimatedGameId } from "./catalog.ts";
-import { getGameDefinition } from "./catalog.ts";
-import type { AnimatedScene } from "./shared/AnimatedScene.ts";
-import { PickerAudio } from "./shared/PickerAudio.ts";
-import { usePickerSession } from "./shared/usePickerSession.ts";
-import { useAnimatedScene } from "./shared/useAnimatedScene.ts";
-import { useGamePreferences } from "../hooks/useGamePreferences.ts";
-import PickerHeader from "./shared/PickerHeader.tsx";
-import PickerResult from "./shared/PickerResult.tsx";
-import RosterEditor from "../components/RosterEditor.tsx";
-import Attendance from "../components/Attendance.tsx";
-import Modal from "../components/Modal.tsx";
-import MangoCanopy from "./mango/MangoCanopy.tsx";
+import type { Classroom } from "@/lib/classroom.ts";
+import type { AnimatedGameId } from "@/games/catalog.ts";
+import { getGameDefinition } from "@/games/catalog.ts";
+import type { AnimatedScene } from "@/games/shared/AnimatedScene.ts";
+import { PickerAudio } from "@/games/shared/PickerAudio.ts";
+import { usePickerSession } from "@/games/shared/usePickerSession.ts";
+import { useAnimatedScene } from "@/games/shared/useAnimatedScene.ts";
+import { useGamePreferences } from "@/hooks/useGamePreferences.ts";
+import PickerHeader from "@/games/shared/PickerHeader.tsx";
+import PickerResult from "@/games/shared/PickerResult.tsx";
+import RosterEditor from "@/components/RosterEditor.tsx";
+import Attendance from "@/components/Attendance.tsx";
+import Modal from "@/components/Modal.tsx";
+import MangoCanopy from "@/games/mango/MangoCanopy.tsx";
 
 interface AnimatedGameProps {
   id: AnimatedGameId;

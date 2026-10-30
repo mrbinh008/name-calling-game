@@ -1,5 +1,5 @@
-import type { Classroom } from "../lib/classroom.ts";
-import type { VillageScene } from "../game/scene.ts";
+import type { Classroom } from "@/lib/classroom.ts";
+import type { VillageScene } from "@/game/scene.ts";
 export type GamePanel = "roster" | "attendance" | null;
 interface GameProps {
   classroom: Classroom;
@@ -8,16 +8,16 @@ interface GameProps {
   onDismissNotice: () => void;
 }
 import { useEffect, useMemo, useRef, useState } from "react";
-import { createVillage } from "../game/world.ts";
-import { useVillageScene } from "../hooks/useVillageScene.ts";
-import { useGame } from "../hooks/useGame.ts";
-import RosterEditor from "./RosterEditor.tsx";
-import Attendance from "./Attendance.tsx";
-import Result from "./Result.tsx";
-import GameHeader from "./GameHeader.tsx";
-import Lobby from "./Lobby.tsx";
-import { useGamePreferences } from "../hooks/useGamePreferences.ts";
-import { useHousePicking } from "../hooks/useHousePicking.ts";
+import { createVillage } from "@/game/world.ts";
+import { useVillageScene } from "@/hooks/useVillageScene.ts";
+import { useGame } from "@/hooks/useGame.ts";
+import RosterEditor from "@/components/RosterEditor.tsx";
+import Attendance from "@/components/Attendance.tsx";
+import Result from "@/components/Result.tsx";
+import GameHeader from "@/components/GameHeader.tsx";
+import Lobby from "@/components/Lobby.tsx";
+import { useGamePreferences } from "@/hooks/useGamePreferences.ts";
+import { useHousePicking } from "@/hooks/useHousePicking.ts";
 export default function Game({
   classroom,
   onSave,

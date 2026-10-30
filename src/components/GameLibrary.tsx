@@ -1,6 +1,6 @@
 import { useState, type CSSProperties } from "react";
-import { GAME_CATALOG } from "../games/catalog.ts";
-import type { Classroom } from "../lib/classroom.ts";
+import { GAME_CATALOG } from "@/games/catalog.ts";
+import type { Classroom } from "@/lib/classroom.ts";
 
 interface GameLibraryProps {
   classroom: Classroom;

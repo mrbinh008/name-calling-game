@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState, type RefObject } from "react";
-import type { Classroom } from "../../lib/classroom.ts";
-import type { AnimatedGameId, GameDefinition } from "../catalog.ts";
-import { createAnimatedScene } from "../createScene.ts";
-import type { AnimatedScene } from "./AnimatedScene.ts";
-import type { PickerAudio } from "./PickerAudio.ts";
+import type { Classroom } from "@/lib/classroom.ts";
+import type { AnimatedGameId, GameDefinition } from "@/games/catalog.ts";
+import { createAnimatedScene } from "@/games/createScene.ts";
+import type { AnimatedScene } from "@/games/shared/AnimatedScene.ts";
+import type { PickerAudio } from "@/games/shared/PickerAudio.ts";
 
 export function useAnimatedScene(
   id: AnimatedGameId,

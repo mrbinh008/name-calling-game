@@ -1,6 +1,6 @@
 import type { PointerEvent, RefObject } from "react";
-import type { VillageScene } from "../game/scene.ts";
-import type { GameController } from "./useGame.ts";
+import type { VillageScene } from "@/game/scene.ts";
+import type { GameController } from "@/hooks/useGame.ts";
 interface HousePress {
   name: string;
   held: boolean;

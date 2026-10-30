@@ -6,7 +6,7 @@ interface AttendanceProps {
   onCall: (name: string) => void;
   onClose: () => void;
 }
-import Modal from "./Modal.tsx";
+import Modal from "@/components/Modal.tsx";
 export default function Attendance({
   roster,
   absent,

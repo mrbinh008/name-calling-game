@@ -1,5 +1,5 @@
-import { gameAudio } from "../../game/sound.ts";
-import type { BackgroundAudio } from "../../hooks/useGamePreferences.ts";
+import { gameAudio } from "@/game/sound.ts";
+import type { BackgroundAudio } from "@/hooks/useGamePreferences.ts";
 
 export class PickerAudio implements BackgroundAudio {
   private background: HTMLAudioElement | null = null;
