@@ -17,7 +17,6 @@ const TY_HEIGHT = 215;
 const BEO_HEIGHT = 290;
 const MIT_HEIGHT = 225;
 const MANGO_HEIGHT = 66;
-const U_POKE = 1 / Math.tan((70 * Math.PI) / 180);
 
 const MANGO_FRAMES: Record<string, number> = {
   vui: 0,
@@ -84,11 +83,13 @@ export class MangoPokeScene extends AnimatedScene {
   }
 
   override getStatus(): string {
+    const targetName =
+      this.round?.selectedNames[0] ?? this.actors[0] ?? "Học sinh";
     if (!this.round) return "Ra vườn thôi! Xoài chín đang đợi cả lớp.";
     if (this.progress < 0.18)
       return "Đĩa muối tôm Tây Ninh đã sẵn sàng, chuẩn bị hái xoài…";
     if (this.progress < 0.28)
-      return "Tý đang ngắm quả ngon nhất… quả này chắc ngọt nè!";
+      return "Tý chọc quả này… ủa sao dai quá không rụng! Đổi quả khác thôi!";
     if (this.progress < 0.38)
       return "Á! Kiến cắn ngứa quá! Tý phải thả sào gãi lưng…";
     if (this.progress < 0.46)
@@ -96,8 +97,8 @@ export class MangoPokeScene extends AnimatedScene {
     if (this.progress < 0.56)
       return "Anh Bèo ra tay! Xoài né võ Lăng Ba Vi Bộ!";
     if (this.progress < 0.75)
-      return "CHỌC trúng rồi! Xoài rụng ngay đĩa muối tôm Tây Ninh!";
-    return "Xoài chấm muối đã chọn được người lên bảng!";
+      return `CHỌC trúng rồi! Xoài của ${targetName} rụng ngay đĩa muối tôm!`;
+    return `Mời ${this.round?.selectedNames.join(" và ") ?? targetName} lên bảng chấm muối!`;
   }
 
   protected override getSoundCues(): StoryCue[] {
@@ -357,31 +358,77 @@ export class MangoPokeScene extends AnimatedScene {
         activeSpeech = { speaker: "mit", text: "Giờ chỉ thiếu xoài thôi…" };
       }
     } else if (progress < 0.28) {
-      // Suspense 1: Tý sweeps canopy, hovers under Decoy A
+      // Suspense 1: Tý sweeps canopy, aims and pokes Decoy A, but it doesn't fall (dai quá), so he switches to another fruit!
       const p = (progress - 0.18) / 0.1;
       tySprite = "shortChildAlt";
       poleActive = true;
       poleOffset = 40;
 
-      if (p < 0.4) {
-        tyX = sx(lerp(TREE_BASE_X - 80, decoyFruitA.x - 70, p / 0.4));
+      if (p < 0.35) {
+        tyX = sx(lerp(TREE_BASE_X - 80, decoyFruitA.x - 70, p / 0.35));
         tyFrame = Math.floor(clock * 4) % 2;
-        poleFromX = tyX + ss(10);
-        poleFromY = tyY - ss(TY_HEIGHT * 0.45);
-        poleToX = sx(decoyFruitA.x - 60);
-        poleToY = sy(decoyFruitA.y + 80);
-        activeSpeech = { speaker: "ty", text: "Quả nào ngon nhất ta?" };
-      } else {
+        poleFromX = tyX + ss(55);
+        poleFromY = tyY - ss(TY_HEIGHT * 0.75);
+        poleToX = sx(decoyFruitA.x - 40);
+        poleToY = sy(decoyFruitA.y + 70);
+        activeSpeech = { speaker: "ty", text: "Quả này chắc ngọt nè!" };
+      } else if (p < 0.7) {
+        // Tý thrusts pole directly into Decoy A: CHỌC! But it shakes violently and does not fall!
         tyX = sx(decoyFruitA.x - 70);
         tyFrame = 2 + (Math.floor(clock * 6) % 2);
-        const pokeJitter = Math.sin((p - 0.4) * Math.PI * 6) * ss(18);
-        poleFromX = tyX + ss(10);
-        poleFromY = tyY - ss(TY_HEIGHT * 0.45);
-        poleToX = sx(decoyFruitA.x) - pokeJitter * U_POKE;
-        poleToY = sy(decoyFruitA.y + 20) - pokeJitter;
+        poleFromX = tyX + ss(80);
+        poleFromY = tyY - ss(TY_HEIGHT * 0.95);
+
+        const pokeTime = (p - 0.35) / 0.35;
+        const wobble = Math.sin(pokeTime * Math.PI * 12) * ss(14);
+        poleToX = sx(decoyFruitA.x) + wobble * 0.4;
+        poleToY = sy(decoyFruitA.y + 25);
+
         decoyFruitA.idleExpression = "ratSo";
         dangerousFruits.add(decoyFruitA.name);
-        activeSpeech = { speaker: "ty", text: "Quả này chắc ngọt nè!" };
+
+        comicTexts.push({
+          text: "CHỌC!",
+          x: sx(decoyFruitA.x + 35),
+          y: sy(decoyFruitA.y - 25),
+          scale: 1.25,
+          color: "#f97316",
+        });
+
+        if (pokeTime < 0.5) {
+          activeSpeech = {
+            speaker: "ty",
+            text: "Rụng đi nào… ủa sao dai quá?!",
+          };
+        } else {
+          comicTexts.push({
+            text: "KHÔNG RỤNG!",
+            x: sx(decoyFruitA.x - 20),
+            y: sy(decoyFruitA.y - 55),
+            scale: 1.15,
+            color: "#ef4444",
+          });
+          activeSpeech = {
+            speaker: "ty",
+            text: "Cuống dẻo quá, không chịu rụng!",
+          };
+        }
+      } else {
+        // Decoy A stays firmly on branch and teases; Tý gives up and switches pole towards Decoy B!
+        const switchP = (p - 0.7) / 0.3;
+        tyX = sx(decoyFruitA.x - 70);
+        tyFrame = 2;
+        poleFromX = tyX + ss(75);
+        poleFromY = tyY - ss(TY_HEIGHT * 0.92);
+
+        poleToX = sx(lerp(decoyFruitA.x, decoyFruitB.x - 40, switchP));
+        poleToY = sy(lerp(decoyFruitA.y + 25, decoyFruitB.y + 100, switchP));
+
+        decoyFruitA.idleExpression = "treu";
+        activeSpeech = {
+          speaker: "ty",
+          text: "Quả này dai quá, đổi quả khác thôi!",
+        };
       }
     } else if (progress < 0.38) {
       // Suspense 2: Ants attack! Tý drops pole, shivers, scratches
@@ -426,26 +473,26 @@ export class MangoPokeScene extends AnimatedScene {
       if (p < 0.3) {
         tyX = sx(lerp(decoyFruitA.x - 70, decoyFruitB.x - 60, p / 0.3));
         tyFrame = 9; // Scratching head
-        poleFromX = tyX + ss(10);
-        poleFromY = tyY - ss(TY_HEIGHT * 0.45);
+        poleFromX = tyX + ss(40);
+        poleFromY = tyY - ss(TY_HEIGHT * 0.65);
         poleToX = sx(decoyFruitB.x - 40);
         poleToY = sy(decoyFruitB.y + 120);
         activeSpeech = { speaker: "ty", text: "Ủa… nãy chọc quả nào ta?" };
       } else if (p < 0.7) {
         tyX = sx(decoyFruitB.x - 60);
         tyFrame = 4 + (Math.floor(clock * 6) % 2); // Stretching on tiptoes
-        poleFromX = tyX + ss(10);
-        poleFromY = tyY - ss(TY_HEIGHT * 0.55);
+        poleFromX = tyX + ss(53);
+        poleFromY = tyY - ss(TY_HEIGHT * 0.98);
         poleToX = sx(decoyFruitB.x - 20);
-        poleToY = sy(decoyFruitB.y + 70); // Just below fruit, misses!
+        poleToY = sy(decoyFruitB.y + 65); // Just below fruit, misses!
         decoyFruitB.idleExpression = "ratSo";
         dangerousFruits.add(decoyFruitB.name);
         activeSpeech = { speaker: "ty", text: "Ráng… ráng chút nữa…" };
       } else {
         tyX = sx(decoyFruitB.x - 60);
         tyFrame = 3;
-        poleFromX = tyX + ss(10);
-        poleFromY = tyY - ss(TY_HEIGHT * 0.45);
+        poleFromX = tyX + ss(60);
+        poleFromY = tyY - ss(TY_HEIGHT * 0.85);
         poleToX = sx(decoyFruitB.x - 30);
         poleToY = sy(decoyFruitB.y + 110);
         decoyFruitB.idleExpression = "treu"; // Laughs
@@ -465,14 +512,16 @@ export class MangoPokeScene extends AnimatedScene {
       if (p < 0.25) {
         beoX = sx(lerp(WORLD_WIDTH + 80, targetFruit.x - 90, p / 0.25));
         beoFrame = Math.floor(clock * 5) % 2;
-        poleFromX = beoX - ss(15);
-        poleFromY = beoY - ss(BEO_HEIGHT * 0.45);
+        poleFromX = beoX + ss(30);
+        poleFromY = beoY - ss(BEO_HEIGHT * 0.65);
         poleToX = sx(targetFruit.x - 50);
         poleToY = sy(targetFruit.y + 120);
         activeSpeech = { speaker: "beo", text: "Đưa đây, để anh!" };
       } else {
         beoX = sx(targetFruit.x - 90);
-        beoFrame = 1 + (Math.floor(clock * 5) % 2);
+        beoFrame = 4;
+        poleFromX = beoX + ss(88);
+        poleFromY = beoY - ss(BEO_HEIGHT * 0.79);
 
         if (p < 0.65) {
           // Dodge 1: Lăng Ba Vi Bộ
@@ -505,8 +554,6 @@ export class MangoPokeScene extends AnimatedScene {
           activeSpeech = { speaker: "mit", text: "Xoài học võ Thiếu Lâm hả?!" };
         }
 
-        poleFromX = beoX - ss(15);
-        poleFromY = beoY - ss(BEO_HEIGHT * 0.48);
         poleToX = sx(targetFruit.x + targetDodgeX - 25);
         poleToY = sy(targetFruit.y + targetDodgeY + 25);
       }
@@ -530,8 +577,8 @@ export class MangoPokeScene extends AnimatedScene {
         targetRotation = drop * Math.PI * 2;
         targetExpression = "roi";
         beoFrame = 4;
-        poleFromX = beoX - ss(15);
-        poleFromY = beoY - ss(BEO_HEIGHT * 0.52);
+        poleFromX = beoX + ss(106);
+        poleFromY = beoY - ss(BEO_HEIGHT * 0.96);
         poleToX = sx(targetFruit.x);
         poleToY = sy(targetFruit.y - 15);
         comicTexts.push({
@@ -736,15 +783,20 @@ export class MangoPokeScene extends AnimatedScene {
         rotation: targetRotation,
       });
 
-      // Winner Name Tag on shrimp salt plate
-      this.drawMangoTag(
-        this.displayName(targetName),
-        targetCurX,
-        targetCurY + ss(MANGO_HEIGHT * 1.35),
-        false,
-        true,
-        M,
-      );
+      // Winner Name Tag on shrimp salt plate:
+      // Show full name prominently above the mango / plate so it is NEVER cut off or obscured
+      const bannerY = targetCurY - ss(MANGO_HEIGHT * 1.15);
+      this.drawWinnerCelebrationTag(targetName, targetCurX, bannerY, M);
+
+      // If second target exists, draw their tag beside Tý
+      if (secondTarget && progress >= 0.65) {
+        this.drawWinnerCelebrationTag(
+          secondTarget,
+          tyX,
+          tyY - ss(TY_HEIGHT * 1.05),
+          M,
+        );
+      }
     }
 
     // 9. Comic Text Popups
@@ -776,6 +828,68 @@ export class MangoPokeScene extends AnimatedScene {
         340,
       );
     }
+  }
+
+  private drawWinnerCelebrationTag(
+    fullName: string,
+    x: number,
+    y: number,
+    scale: number,
+  ): void {
+    const ctx = this.context;
+    ctx.save();
+    ctx.translate(x, y);
+
+    const fontSize = Math.max(16, 22 * scale);
+    ctx.font = `900 ${fontSize}px "Baloo 2", system-ui, sans-serif`;
+    const textWidth = ctx.measureText(fullName).width;
+    const bannerW = Math.max(220 * scale, textWidth + 48 * scale);
+    const bannerH = 68 * scale;
+    const radius = 18 * scale;
+
+    // Drop shadow
+    ctx.shadowColor = "rgba(0, 0, 0, 0.45)";
+    ctx.shadowBlur = 14 * scale;
+    ctx.shadowOffsetY = 5 * scale;
+
+    // Background card (warm golden / creamy background with mango flavor)
+    ctx.fillStyle = "#fffbeb";
+    ctx.beginPath();
+    ctx.roundRect(-bannerW / 2, -bannerH / 2, bannerW, bannerH, radius);
+    ctx.fill();
+
+    ctx.shadowColor = "transparent";
+
+    // Double border: bold chili-salt red outer, gold inner
+    ctx.lineWidth = Math.max(2.5, 4 * scale);
+    ctx.strokeStyle = "#dc2626"; // Chili red
+    ctx.stroke();
+
+    ctx.lineWidth = Math.max(1, 2 * scale);
+    ctx.strokeStyle = "#facc15"; // Mango gold
+    ctx.beginPath();
+    ctx.roundRect(
+      -bannerW / 2 + 3 * scale,
+      -bannerH / 2 + 3 * scale,
+      bannerW - 6 * scale,
+      bannerH - 6 * scale,
+      radius - 2 * scale,
+    );
+    ctx.stroke();
+
+    // Top eyebrow badge
+    ctx.font = `800 ${Math.max(10, 11 * scale)}px "Baloo 2", system-ui, sans-serif`;
+    ctx.fillStyle = "#ea580c";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillText("🥭 XOÀI CHÍN CHẤM MUỐI 🥭", 0, -17 * scale);
+
+    // Full Student Name (large, crystal clear, rich dark red / orange)
+    ctx.font = `900 ${fontSize}px "Baloo 2", system-ui, sans-serif`;
+    ctx.fillStyle = "#7f1d1d";
+    ctx.fillText(fullName, 0, 11 * scale);
+
+    ctx.restore();
   }
 
   private drawMangoTag(

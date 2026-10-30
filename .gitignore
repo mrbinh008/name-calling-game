@@ -11,3 +11,5 @@ reference/
 /game2/
 /_next/
 /gv/
+.agents
+skills-lock.json

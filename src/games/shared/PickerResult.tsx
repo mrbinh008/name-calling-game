@@ -15,6 +15,7 @@ export default function PickerResult({
   onHome,
 }: PickerResultProps) {
   const isDogChase = definition.id === "dog-chase";
+  const isMangoPoke = definition.id === "mango-poke";
 
   return (
     <Modal
@@ -63,6 +64,46 @@ export default function PickerResult({
               <button
                 type="button"
                 className="dog-chase-home-btn"
+                onClick={onHome}
+              >
+                Về sân chơi
+              </button>
+            </div>
+          </div>
+        </div>
+      ) : isMangoPoke ? (
+        <div className="mango-poke-result-card">
+          <div className="mango-poke-banner">
+            <span>🥭 Xoài Chín Đã Rụng 🥭</span>
+          </div>
+          <div className="mango-poke-body">
+            <h2 id="picker-result-title" className="sr-only">
+              {definition.resultTitle}
+            </h2>
+            <p className="mango-poke-subtitle">
+              Mời {names.length > 1 ? "các em" : "em"} lên bảng chấm muối tôm
+              Tây Ninh!
+            </p>
+            <ul className="picker-result-names mango-poke-names">
+              {names.map((name) => (
+                <li key={name}>{name}</li>
+              ))}
+            </ul>
+            <div className="mango-poke-actions">
+              <button
+                type="button"
+                className="mango-poke-next-btn"
+                onClick={onNext}
+                autoFocus
+              >
+                <span className="mango-poke-next-icon" aria-hidden="true">
+                  ▶
+                </span>
+                <span>Gọi tiếp</span>
+              </button>
+              <button
+                type="button"
+                className="mango-poke-home-btn"
                 onClick={onHome}
               >
                 Về sân chơi
