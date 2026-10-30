@@ -4,10 +4,10 @@ test-results/
 playwright-report/
 *.local
 reference/
-.idea
-dog-chase
-game
-game1
-game2
-_next
-gv
+.idea/
+/dog-chase/
+/game/
+/game1/
+/game2/
+/_next/
+/gv/

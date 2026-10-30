@@ -1,5 +1,5 @@
 import type { RefObject } from "react";
-import type { Village } from "@/game/types.ts";
+import type { CueName, Village } from "@/game/types.ts";
 type SceneStatus = "loading" | "ready" | "error";
 import { useEffect, useRef, useState } from "react";
 import { VillageScene } from "@/game/scene.ts";
@@ -44,7 +44,7 @@ export function useVillageScene(
           return;
         }
         sceneRef.current = scene;
-        scene.onCue = (cue) => {
+        scene.onCue = (cue: CueName) => {
           if (cue === "result") onResultRef.current();
           villageAudio.playCue(cue);
         };
