@@ -1,0 +1,34 @@
+{
+  "background": {
+    "url": "/games/parent-call/hinh-nen.webp",
+    "frames": []
+  },
+  "computer": {
+    "url": "/games/parent-call/ic-may-tinh.webp",
+    "frames": []
+  },
+  "folder": {
+    "url": "/games/parent-call/ic-thu-muc.webp",
+    "frames": []
+  },
+  "browser": {
+    "url": "/games/parent-call/ic-trinh-duyet.webp",
+    "frames": []
+  },
+  "word": {
+    "url": "/games/parent-call/ic-word.webp",
+    "frames": []
+  },
+  "excel": {
+    "url": "/games/parent-call/ic-excel.webp",
+    "frames": []
+  },
+  "zalo": {
+    "url": "/games/parent-call/ic-zalo.webp",
+    "frames": []
+  },
+  "trash": {
+    "url": "/games/parent-call/ic-thung-rac.webp",
+    "frames": []
+  }
+}

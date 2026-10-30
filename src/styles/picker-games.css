@@ -1,0 +1,466 @@
+.picker-shell {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  background: #172820;
+  isolation: isolate;
+  color: #203b2a;
+}
+.picker-canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.picker-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: max(14px, env(safe-area-inset-top)) 18px 14px;
+  z-index: 5;
+  pointer-events: none;
+}
+.picker-header > * {
+  pointer-events: auto;
+}
+.picker-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px 10px 10px;
+  background: #fffdf3ee;
+  border: 2px solid #385b2f;
+  border-radius: 13px;
+  max-width: 560px;
+  min-width: 0;
+}
+.picker-heading > div {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.picker-library-link {
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  color: #203b2a;
+  border-right: 1px solid #a9b79c;
+  font-size: 28px;
+  width: 38px;
+  padding-right: 10px;
+  flex-shrink: 0;
+}
+.picker-heading h1 {
+  font-family: "Baloo 2";
+  font-size: 23px;
+  line-height: 1.1;
+  margin: 0 0 5px;
+}
+.picker-heading p {
+  font-size: 10px;
+  margin: 0;
+  line-height: 1.5;
+}
+.picker-caption {
+  position: absolute;
+  z-index: 3;
+  top: 105px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 8px 18px;
+  border-radius: 30px;
+  background: #fffdf2e8;
+  border: 1px solid #fff8;
+  font-family: "Baloo 2";
+  font-size: 18px;
+  text-align: center;
+  max-width: calc(100vw - 32px);
+  width: max-content;
+  pointer-events: none;
+}
+.picker-caption.is-playing {
+  background: #15271ee6;
+  color: #fffdf3;
+}
+.picker-lobby {
+  position: absolute;
+  bottom: max(24px, env(safe-area-inset-bottom));
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 4;
+  padding: 0 16px;
+}
+.picker-controls {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  background: #fffdf4f5;
+  border: 3px solid #294d32;
+  border-radius: 18px;
+  padding: 14px 22px 10px;
+  box-shadow: 0 6px #17392155;
+}
+.picker-controls > p {
+  flex-basis: 100%;
+  text-align: center;
+  font-size: 11px;
+  color: #4f6246;
+  margin: 2px 0 0;
+}
+.picker-controls .xm-nut--lon {
+  padding: 8px 54px;
+  font-size: 28px;
+}
+.picker-controls .xm-bang__dong > span {
+  font-size: 13px;
+  font-weight: 700;
+}
+.picker-progress {
+  position: absolute;
+  z-index: 4;
+  bottom: max(24px, env(safe-area-inset-bottom));
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #182c25ec;
+  border: 1px solid #ffffff70;
+  border-radius: 12px;
+  padding: 9px 12px;
+  color: #fff;
+}
+.picker-progress progress {
+  width: 120px;
+  height: 6px;
+  accent-color: #ffdb76;
+}
+.picker-progress > button {
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font-size: 12px;
+  padding: 4px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.picker-loading {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  padding: 24px;
+  text-align: center;
+  background: #f2f2e5;
+  color: #26452c;
+  font-weight: 700;
+}
+.picker-loading p {
+  margin: 0;
+  font-size: 16px;
+}
+.picker-loading > a {
+  color: inherit;
+  font-size: 13px;
+}
+.picker-result {
+  text-align: center;
+  width: min(720px, calc(100vw - 32px));
+  background: #fffdf4;
+  padding: 34px 30px;
+  border: 2px solid #e0cf9f;
+}
+.picker-result-eyebrow {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  color: #877647;
+  margin: 0 0 16px;
+}
+.picker-result h2 {
+  font-family: "Baloo 2";
+  font-size: clamp(26px, 3.5vw, 44px);
+  line-height: 1.1;
+  color: #a13f26;
+  margin: 0 0 16px;
+}
+.picker-result > p:not(.picker-result-eyebrow) {
+  font-size: 15px;
+  color: #6a705f;
+}
+.picker-result-names {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0;
+  font-family: "Baloo 2";
+  font-size: clamp(28px, 4vw, 50px);
+  font-weight: 800;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+.picker-result-names > li + li {
+  margin-top: 10px;
+}
+.picker-result .picker-result-invitation {
+  color: #a13f26 !important;
+  font-weight: 700;
+}
+.picker-pause {
+  text-align: center;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+.picker-pause:not([open]) {
+  display: none;
+}
+.picker-pause h2 {
+  font-family: "Baloo 2";
+  font-size: 30px;
+  margin: 0;
+}
+.game-library-back {
+  pointer-events: auto;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  flex-shrink: 0;
+  border-right: 1px solid #94a687;
+  padding-right: 8px;
+  margin-right: 2px;
+  color: #274a30;
+  font-size: 26px;
+  text-decoration: none;
+}
+@media (max-width: 1000px) {
+  .picker-header {
+    padding: 10px;
+    gap: 10px;
+  }
+  .picker-heading {
+    max-width: 440px;
+    padding: 9px;
+  }
+  .picker-heading h1 {
+    font-size: 19px;
+  }
+  .picker-header .header-actions {
+    max-width: 350px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  .picker-caption {
+    font-size: 16px;
+  }
+}
+@media (max-width: 650px) {
+  .picker-header {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .picker-heading {
+    max-width: 100%;
+    padding: 8px;
+  }
+  .picker-heading h1 {
+    font-size: 18px;
+  }
+  .picker-heading p {
+    font-size: 9px;
+  }
+  .picker-header .header-actions {
+    width: 100%;
+    max-width: none;
+    gap: 6px;
+  }
+  .picker-caption {
+    top: auto;
+    bottom: 180px;
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+  .picker-caption.is-playing {
+    bottom: 80px;
+  }
+  .picker-progress {
+    right: 12px;
+    left: 12px;
+    justify-content: space-between;
+    bottom: 16px;
+  }
+  .picker-progress progress {
+    width: 80px;
+  }
+  .picker-progress > button {
+    font-size: 11px;
+  }
+  .picker-controls {
+    padding: 10px 16px;
+    gap: 10px;
+  }
+  .picker-controls .xm-nut--lon {
+    font-size: 25px;
+    padding: 6px 36px;
+  }
+  .picker-controls > p {
+    font-size: 10px;
+  }
+  .picker-result {
+    padding: 24px 18px;
+  }
+  .picker-result .xm-nut {
+    padding: 10px 20px;
+    font-size: 21px;
+  }
+}
+
+/* Dog Chase Original Aesthetic */
+.modal.picker-result--dog-chase {
+  position: relative;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 32px 16px 16px !important;
+  overflow: visible !important;
+  width: min(580px, calc(100vw - 32px));
+  max-width: 580px;
+}
+.dog-chase-result-card {
+  position: relative;
+  width: 100%;
+}
+.dog-chase-star {
+  position: absolute;
+  pointer-events: none;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.25));
+  z-index: 20;
+}
+.dog-chase-star--left {
+  top: -26px;
+  left: -24px;
+  width: 82px;
+  transform: rotate(-12deg);
+}
+.dog-chase-star--right {
+  bottom: 24px;
+  right: -22px;
+  width: 68px;
+  transform: rotate(12deg);
+}
+.dog-chase-banner {
+  position: relative;
+  z-index: 10;
+  margin: 0 auto -24px;
+  width: fit-content;
+  transform: rotate(-2deg);
+  border-radius: 18px;
+  border: 4px solid #3b2416;
+  background: #dc2626;
+  padding: 8px 28px;
+  box-shadow: 0 5px 0 #3b2416;
+  text-align: center;
+}
+.dog-chase-banner span {
+  white-space: nowrap;
+  font-family: "Baloo 2", cursive;
+  font-size: 20px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #ffffff;
+}
+.dog-chase-body {
+  border-radius: 34px;
+  border: 5px solid #3b2416;
+  background: #fff4d6;
+  padding: 44px 24px 28px;
+  text-align: center;
+  box-shadow:
+    0 10px 0 #3b2416,
+    0 26px 50px rgba(0, 0, 0, 0.35);
+}
+.dog-chase-names {
+  margin: 12px 0 24px;
+  padding: 0;
+  list-style: none;
+  color: #f97316;
+  font-family: "Baloo 2", cursive;
+  font-size: clamp(38px, 6vw, 62px);
+  font-weight: 900;
+  line-height: 1.15;
+  -webkit-text-stroke: 3px #3b2416;
+  paint-order: stroke fill;
+  text-shadow: 0 5px 0 #3b2416;
+  overflow-wrap: anywhere;
+}
+.dog-chase-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+.dog-chase-next-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border-radius: 18px;
+  border: 3px solid #fde047;
+  background: linear-gradient(180deg, #f97316 0%, #ea580c 50%, #c2410c 100%);
+  padding: 12px 48px;
+  font-family: "Baloo 2", cursive;
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+  box-shadow:
+    0 6px 0 #7c2d12,
+    0 14px 32px rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.dog-chase-next-btn:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+}
+.dog-chase-next-btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #7c2d12;
+}
+.dog-chase-next-icon {
+  font-size: 26px;
+  color: #fde047;
+}
+.dog-chase-home-btn {
+  background: transparent;
+  border: none;
+  color: #7c2d12;
+  font-family: "Baloo 2", cursive;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 4px 16px;
+  opacity: 0.85;
+  transition: opacity 0.15s ease;
+}
+.dog-chase-home-btn:hover {
+  opacity: 1;
+}

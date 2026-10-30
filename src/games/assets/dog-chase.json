@@ -1,0 +1,2023 @@
+{
+  "student.male1.sneak": {
+    "url": "/games/dog-chase/hs/nam1_ronren.webp",
+    "frames": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 195,
+        "height": 291,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 195,
+        "y": 0,
+        "width": 195,
+        "height": 291,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 390,
+        "y": 0,
+        "width": 195,
+        "height": 291,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 585,
+        "y": 0,
+        "width": 195,
+        "height": 291,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 780,
+        "y": 0,
+        "width": 195,
+        "height": 291,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 975,
+        "y": 0,
+        "width": 195,
+        "height": 291,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 1170,
+        "y": 0,
+        "width": 195,
+        "height": 291,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 1365,
+        "y": 0,
+        "width": 195,
+        "height": 291,
+        "bounds": [0, 0, 1, 1]
+      }
+    ]
+  },
+  "student.male1.scared": {
+    "url": "/games/dog-chase/hs/nam1_sohai.webp",
+    "frames": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 245,
+        "height": 343,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 245,
+        "y": 0,
+        "width": 245,
+        "height": 343,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 490,
+        "y": 0,
+        "width": 245,
+        "height": 343,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 735,
+        "y": 0,
+        "width": 245,
+        "height": 343,
+        "bounds": [0, 0, 1, 1]
+      }
+    ]
+  },
+  "student.male1.run": {
+    "url": "/games/dog-chase/hs/nam1_chay.webp",
+    "frames": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 292,
+        "height": 362,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 292,
+        "y": 0,
+        "width": 292,
+        "height": 362,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 584,
+        "y": 0,
+        "width": 292,
+        "height": 362,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 876,
+        "y": 0,
+        "width": 292,
+        "height": 362,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 1168,
+        "y": 0,
+        "width": 292,
+        "height": 362,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 1460,
+        "y": 0,
+        "width": 292,
+        "height": 362,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 1752,
+        "y": 0,
+        "width": 292,
+        "height": 362,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 2044,
+        "y": 0,
+        "width": 292,
+        "height": 362,
+        "bounds": [0, 0, 1, 1]
+      }
+    ]
+  },
+  "student.male1.dance": {
+    "url": "/games/dog-chase/hs/nam1_dongtay.webp",
+    "frames": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 226,
+        "height": 325,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 226,
+        "y": 0,
+        "width": 226,
+        "height": 325,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 452,
+        "y": 0,
+        "width": 226,
+        "height": 325,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 678,
+        "y": 0,
+        "width": 226,
+        "height": 325,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 904,
+        "y": 0,
+        "width": 226,
+        "height": 325,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 1130,
+        "y": 0,
+        "width": 226,
+        "height": 325,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 1356,
+        "y": 0,
+        "width": 226,
+        "height": 325,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 1582,
+        "y": 0,
+        "width": 226,
+        "height": 325,
+        "bounds": [0, 0, 1, 1]
+      }
+    ]
+  },
+  "student.male1.jump": {
+    "url": "/games/dog-chase/hs/nam1_nhay.webp",
+    "frames": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 272,
+        "height": 314,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 272,
+        "y": 0,
+        "width": 272,
+        "height": 314,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 544,
+        "y": 0,
+        "width": 272,
+        "height": 314,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 816,
+        "y": 0,
+        "width": 272,
+        "height": 314,
+        "bounds": [0, 0, 1, 1]
+      }
+    ]
+  },
+  "student.male1.cling": {
+    "url": "/games/dog-chase/hs/nam1_baucay.webp",
+    "frames": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 196,
+        "height": 312,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 196,
+        "y": 0,
+        "width": 196,
+        "height": 312,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 392,
+        "y": 0,
+        "width": 196,
+        "height": 312,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 588,
+        "y": 0,
+        "width": 196,
+        "height": 312,
+        "bounds": [0, 0, 1, 1]
+      }
+    ]
+  },
+  "student.male2.sneak": {
+    "url": "/games/dog-chase/hs/nam2_ronren.webp",
+    "frames": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 203,
+        "height": 291,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 203,
+        "y": 0,
+        "width": 203,
+        "height": 291,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 406,
+        "y": 0,
+        "width": 203,
+        "height": 291,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 609,
+        "y": 0,
+        "width": 203,
+        "height": 291,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 812,
+        "y": 0,
+        "width": 203,
+        "height": 291,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 1015,
+        "y": 0,
+        "width": 203,
+        "height": 291,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 1218,
+        "y": 0,
+        "width": 203,
+        "height": 291,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 1421,
+        "y": 0,
+        "width": 203,
+        "height": 291,
+        "bounds": [0, 0, 1, 1]
+      }
+    ]
+  },
+  "student.male2.scared": {
+    "url": "/games/dog-chase/hs/nam2_sohai.webp",
+    "frames": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 206,
+        "height": 330,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 206,
+        "y": 0,
+        "width": 206,
+        "height": 330,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 412,
+        "y": 0,
+        "width": 206,
+        "height": 330,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 618,
+        "y": 0,
+        "width": 206,
+        "height": 330,
+        "bounds": [0, 0, 1, 1]
+      }
+    ]
+  },
+  "student.male2.run": {
+    "url": "/games/dog-chase/hs/nam2_chay.webp",
+    "frames": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 242,
+        "height": 357,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 242,
+        "y": 0,
+        "width": 242,
+        "height": 357,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 484,
+        "y": 0,
+        "width": 242,
+        "height": 357,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 726,
+        "y": 0,
+        "width": 242,
+        "height": 357,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 968,
+        "y": 0,
+        "width": 242,
+        "height": 357,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 1210,
+        "y": 0,
+        "width": 242,
+        "height": 357,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 1452,
+        "y": 0,
+        "width": 242,
+        "height": 357,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 1694,
+        "y": 0,
+        "width": 242,
+        "height": 357,
+        "bounds": [0, 0, 1, 1]
+      }
+    ]
+  },
+  "student.male2.dance": {
+    "url": "/games/dog-chase/hs/nam2_dongtay.webp",
+    "frames": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 197,
+        "height": 323,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 197,
+        "y": 0,
+        "width": 197,
+        "height": 323,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 394,
+        "y": 0,
+        "width": 197,
+        "height": 323,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 591,
+        "y": 0,
+        "width": 197,
+        "height": 323,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 788,
+        "y": 0,
+        "width": 197,
+        "height": 323,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 985,
+        "y": 0,
+        "width": 197,
+        "height": 323,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 1182,
+        "y": 0,
+        "width": 197,
+        "height": 323,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 1379,
+        "y": 0,
+        "width": 197,
+        "height": 323,
+        "bounds": [0, 0, 1, 1]
+      }
+    ]
+  },
+  "student.male2.jump": {
+    "url": "/games/dog-chase/hs/nam2_nhay.webp",
+    "frames": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 225,
+        "height": 312,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 225,
+        "y": 0,
+        "width": 225,
+        "height": 312,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 450,
+        "y": 0,
+        "width": 225,
+        "height": 312,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 675,
+        "y": 0,
+        "width": 225,
+        "height": 312,
+        "bounds": [0, 0, 1, 1]
+      }
+    ]
+  },
+  "student.male2.cling": {
+    "url": "/games/dog-chase/hs/nam2_baucay.webp",
+    "frames": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 186,
+        "height": 312,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 186,
+        "y": 0,
+        "width": 186,
+        "height": 312,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 372,
+        "y": 0,
+        "width": 186,
+        "height": 312,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 558,
+        "y": 0,
+        "width": 186,
+        "height": 312,
+        "bounds": [0, 0, 1, 1]
+      }
+    ]
+  },
+  "student.male3.sneak": {
+    "url": "/games/dog-chase/hs/nam3_ronren.webp",
+    "frames": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 209,
+        "height": 290,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 209,
+        "y": 0,
+        "width": 209,
+        "height": 290,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 418,
+        "y": 0,
+        "width": 209,
+        "height": 290,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 627,
+        "y": 0,
+        "width": 209,
+        "height": 290,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 836,
+        "y": 0,
+        "width": 209,
+        "height": 290,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 1045,
+        "y": 0,
+        "width": 209,
+        "height": 290,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 1254,
+        "y": 0,
+        "width": 209,
+        "height": 290,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 1463,
+        "y": 0,
+        "width": 209,
+        "height": 290,
+        "bounds": [0, 0, 1, 1]
+      }
+    ]
+  },
+  "student.male3.scared": {
+    "url": "/games/dog-chase/hs/nam3_sohai.webp",
+    "frames": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 228,
+        "height": 329,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 228,
+        "y": 0,
+        "width": 228,
+        "height": 329,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 456,
+        "y": 0,
+        "width": 228,
+        "height": 329,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 684,
+        "y": 0,
+        "width": 228,
+        "height": 329,
+        "bounds": [0, 0, 1, 1]
+      }
+    ]
+  },
+  "student.male3.run": {
+    "url": "/games/dog-chase/hs/nam3_chay.webp",
+    "frames": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 275,
+        "height": 354,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 275,
+        "y": 0,
+        "width": 275,
+        "height": 354,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 550,
+        "y": 0,
+        "width": 275,
+        "height": 354,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 825,
+        "y": 0,
+        "width": 275,
+        "height": 354,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 1100,
+        "y": 0,
+        "width": 275,
+        "height": 354,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 1375,
+        "y": 0,
+        "width": 275,
+        "height": 354,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 1650,
+        "y": 0,
+        "width": 275,
+        "height": 354,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 1925,
+        "y": 0,
+        "width": 275,
+        "height": 354,
+        "bounds": [0, 0, 1, 1]
+      }
+    ]
+  },
+  "student.male3.dance": {
+    "url": "/games/dog-chase/hs/nam3_dongtay.webp",
+    "frames": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 225,
+        "height": 340,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 225,
+        "y": 0,
+        "width": 225,
+        "height": 340,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 450,
+        "y": 0,
+        "width": 225,
+        "height": 340,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 675,
+        "y": 0,
+        "width": 225,
+        "height": 340,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 900,
+        "y": 0,
+        "width": 225,
+        "height": 340,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 1125,
+        "y": 0,
+        "width": 225,
+        "height": 340,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 1350,
+        "y": 0,
+        "width": 225,
+        "height": 340,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 1575,
+        "y": 0,
+        "width": 225,
+        "height": 340,
+        "bounds": [0, 0, 1, 1]
+      }
+    ]
+  },
+  "student.male3.jump": {
+    "url": "/games/dog-chase/hs/nam3_nhay.webp",
+    "frames": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 247,
+        "height": 316,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 247,
+        "y": 0,
+        "width": 247,
+        "height": 316,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 494,
+        "y": 0,
+        "width": 247,
+        "height": 316,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 741,
+        "y": 0,
+        "width": 247,
+        "height": 316,
+        "bounds": [0, 0, 1, 1]
+      }
+    ]
+  },
+  "student.male3.cling": {
+    "url": "/games/dog-chase/hs/nam3_baucay.webp",
+    "frames": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 201,
+        "height": 312,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 201,
+        "y": 0,
+        "width": 201,
+        "height": 312,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 402,
+        "y": 0,
+        "width": 201,
+        "height": 312,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 603,
+        "y": 0,
+        "width": 201,
+        "height": 312,
+        "bounds": [0, 0, 1, 1]
+      }
+    ]
+  },
+  "student.female1.sneak": {
+    "url": "/games/dog-chase/hs/nu1_ronren.webp",
+    "frames": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 231,
+        "height": 291,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 231,
+        "y": 0,
+        "width": 231,
+        "height": 291,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 462,
+        "y": 0,
+        "width": 231,
+        "height": 291,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 693,
+        "y": 0,
+        "width": 231,
+        "height": 291,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 924,
+        "y": 0,
+        "width": 231,
+        "height": 291,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 1155,
+        "y": 0,
+        "width": 231,
+        "height": 291,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 1386,
+        "y": 0,
+        "width": 231,
+        "height": 291,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 1617,
+        "y": 0,
+        "width": 231,
+        "height": 291,
+        "bounds": [0, 0, 1, 1]
+      }
+    ]
+  },
+  "student.female1.scared": {
+    "url": "/games/dog-chase/hs/nu1_sohai.webp",
+    "frames": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 266,
+        "height": 330,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 266,
+        "y": 0,
+        "width": 266,
+        "height": 330,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 532,
+        "y": 0,
+        "width": 266,
+        "height": 330,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 798,
+        "y": 0,
+        "width": 266,
+        "height": 330,
+        "bounds": [0, 0, 1, 1]
+      }
+    ]
+  },
+  "student.female1.run": {
+    "url": "/games/dog-chase/hs/nu1_chay.webp",
+    "frames": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 322,
+        "height": 355,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 322,
+        "y": 0,
+        "width": 322,
+        "height": 355,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 644,
+        "y": 0,
+        "width": 322,
+        "height": 355,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 966,
+        "y": 0,
+        "width": 322,
+        "height": 355,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 1288,
+        "y": 0,
+        "width": 322,
+        "height": 355,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 1610,
+        "y": 0,
+        "width": 322,
+        "height": 355,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 1932,
+        "y": 0,
+        "width": 322,
+        "height": 355,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 2254,
+        "y": 0,
+        "width": 322,
+        "height": 355,
+        "bounds": [0, 0, 1, 1]
+      }
+    ]
+  },
+  "student.female1.dance": {
+    "url": "/games/dog-chase/hs/nu1_dongtay.webp",
+    "frames": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 245,
+        "height": 320,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 245,
+        "y": 0,
+        "width": 245,
+        "height": 320,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 490,
+        "y": 0,
+        "width": 245,
+        "height": 320,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 735,
+        "y": 0,
+        "width": 245,
+        "height": 320,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 980,
+        "y": 0,
+        "width": 245,
+        "height": 320,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 1225,
+        "y": 0,
+        "width": 245,
+        "height": 320,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 1470,
+        "y": 0,
+        "width": 245,
+        "height": 320,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 1715,
+        "y": 0,
+        "width": 245,
+        "height": 320,
+        "bounds": [0, 0, 1, 1]
+      }
+    ]
+  },
+  "student.female1.jump": {
+    "url": "/games/dog-chase/hs/nu1_nhay.webp",
+    "frames": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 276,
+        "height": 312,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 276,
+        "y": 0,
+        "width": 276,
+        "height": 312,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 552,
+        "y": 0,
+        "width": 276,
+        "height": 312,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 828,
+        "y": 0,
+        "width": 276,
+        "height": 312,
+        "bounds": [0, 0, 1, 1]
+      }
+    ]
+  },
+  "student.female1.cling": {
+    "url": "/games/dog-chase/hs/nu1_baucay.webp",
+    "frames": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 213,
+        "height": 312,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 213,
+        "y": 0,
+        "width": 213,
+        "height": 312,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 426,
+        "y": 0,
+        "width": 213,
+        "height": 312,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 639,
+        "y": 0,
+        "width": 213,
+        "height": 312,
+        "bounds": [0, 0, 1, 1]
+      }
+    ]
+  },
+  "student.female2.sneak": {
+    "url": "/games/dog-chase/hs/nu2_ronren.webp",
+    "frames": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 212,
+        "height": 290,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 212,
+        "y": 0,
+        "width": 212,
+        "height": 290,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 424,
+        "y": 0,
+        "width": 212,
+        "height": 290,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 636,
+        "y": 0,
+        "width": 212,
+        "height": 290,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 848,
+        "y": 0,
+        "width": 212,
+        "height": 290,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 1060,
+        "y": 0,
+        "width": 212,
+        "height": 290,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 1272,
+        "y": 0,
+        "width": 212,
+        "height": 290,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 1484,
+        "y": 0,
+        "width": 212,
+        "height": 290,
+        "bounds": [0, 0, 1, 1]
+      }
+    ]
+  },
+  "student.female2.scared": {
+    "url": "/games/dog-chase/hs/nu2_sohai.webp",
+    "frames": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 254,
+        "height": 330,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 254,
+        "y": 0,
+        "width": 254,
+        "height": 330,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 508,
+        "y": 0,
+        "width": 254,
+        "height": 330,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 762,
+        "y": 0,
+        "width": 254,
+        "height": 330,
+        "bounds": [0, 0, 1, 1]
+      }
+    ]
+  },
+  "student.female2.run": {
+    "url": "/games/dog-chase/hs/nu2_chay.webp",
+    "frames": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 283,
+        "height": 356,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 283,
+        "y": 0,
+        "width": 283,
+        "height": 356,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 566,
+        "y": 0,
+        "width": 283,
+        "height": 356,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 849,
+        "y": 0,
+        "width": 283,
+        "height": 356,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 1132,
+        "y": 0,
+        "width": 283,
+        "height": 356,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 1415,
+        "y": 0,
+        "width": 283,
+        "height": 356,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 1698,
+        "y": 0,
+        "width": 283,
+        "height": 356,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 1981,
+        "y": 0,
+        "width": 283,
+        "height": 356,
+        "bounds": [0, 0, 1, 1]
+      }
+    ]
+  },
+  "student.female2.dance": {
+    "url": "/games/dog-chase/hs/nu2_dongtay.webp",
+    "frames": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 228,
+        "height": 315,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 228,
+        "y": 0,
+        "width": 228,
+        "height": 315,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 456,
+        "y": 0,
+        "width": 228,
+        "height": 315,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 684,
+        "y": 0,
+        "width": 228,
+        "height": 315,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 912,
+        "y": 0,
+        "width": 228,
+        "height": 315,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 1140,
+        "y": 0,
+        "width": 228,
+        "height": 315,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 1368,
+        "y": 0,
+        "width": 228,
+        "height": 315,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 1596,
+        "y": 0,
+        "width": 228,
+        "height": 315,
+        "bounds": [0, 0, 1, 1]
+      }
+    ]
+  },
+  "student.female2.jump": {
+    "url": "/games/dog-chase/hs/nu2_nhay.webp",
+    "frames": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 267,
+        "height": 314,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 267,
+        "y": 0,
+        "width": 267,
+        "height": 314,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 534,
+        "y": 0,
+        "width": 267,
+        "height": 314,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 801,
+        "y": 0,
+        "width": 267,
+        "height": 314,
+        "bounds": [0, 0, 1, 1]
+      }
+    ]
+  },
+  "student.female2.cling": {
+    "url": "/games/dog-chase/hs/nu2_baucay.webp",
+    "frames": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 200,
+        "height": 312,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 200,
+        "y": 0,
+        "width": 200,
+        "height": 312,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 400,
+        "y": 0,
+        "width": 200,
+        "height": 312,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 600,
+        "y": 0,
+        "width": 200,
+        "height": 312,
+        "bounds": [0, 0, 1, 1]
+      }
+    ]
+  },
+  "student.female3.sneak": {
+    "url": "/games/dog-chase/hs/nu3_ronren.webp",
+    "frames": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 198,
+        "height": 291,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 198,
+        "y": 0,
+        "width": 198,
+        "height": 291,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 396,
+        "y": 0,
+        "width": 198,
+        "height": 291,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 594,
+        "y": 0,
+        "width": 198,
+        "height": 291,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 792,
+        "y": 0,
+        "width": 198,
+        "height": 291,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 990,
+        "y": 0,
+        "width": 198,
+        "height": 291,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 1188,
+        "y": 0,
+        "width": 198,
+        "height": 291,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 1386,
+        "y": 0,
+        "width": 198,
+        "height": 291,
+        "bounds": [0, 0, 1, 1]
+      }
+    ]
+  },
+  "student.female3.scared": {
+    "url": "/games/dog-chase/hs/nu3_sohai.webp",
+    "frames": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 250,
+        "height": 328,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 250,
+        "y": 0,
+        "width": 250,
+        "height": 328,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 500,
+        "y": 0,
+        "width": 250,
+        "height": 328,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 750,
+        "y": 0,
+        "width": 250,
+        "height": 328,
+        "bounds": [0, 0, 1, 1]
+      }
+    ]
+  },
+  "student.female3.run": {
+    "url": "/games/dog-chase/hs/nu3_chay.webp",
+    "frames": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 318,
+        "height": 365,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 318,
+        "y": 0,
+        "width": 318,
+        "height": 365,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 636,
+        "y": 0,
+        "width": 318,
+        "height": 365,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 954,
+        "y": 0,
+        "width": 318,
+        "height": 365,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 1272,
+        "y": 0,
+        "width": 318,
+        "height": 365,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 1590,
+        "y": 0,
+        "width": 318,
+        "height": 365,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 1908,
+        "y": 0,
+        "width": 318,
+        "height": 365,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 2226,
+        "y": 0,
+        "width": 318,
+        "height": 365,
+        "bounds": [0, 0, 1, 1]
+      }
+    ]
+  },
+  "student.female3.dance": {
+    "url": "/games/dog-chase/hs/nu3_dongtay.webp",
+    "frames": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 229,
+        "height": 341,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 229,
+        "y": 0,
+        "width": 229,
+        "height": 341,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 458,
+        "y": 0,
+        "width": 229,
+        "height": 341,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 687,
+        "y": 0,
+        "width": 229,
+        "height": 341,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 916,
+        "y": 0,
+        "width": 229,
+        "height": 341,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 1145,
+        "y": 0,
+        "width": 229,
+        "height": 341,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 1374,
+        "y": 0,
+        "width": 229,
+        "height": 341,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 1603,
+        "y": 0,
+        "width": 229,
+        "height": 341,
+        "bounds": [0, 0, 1, 1]
+      }
+    ]
+  },
+  "student.female3.jump": {
+    "url": "/games/dog-chase/hs/nu3_nhay.webp",
+    "frames": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 257,
+        "height": 318,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 257,
+        "y": 0,
+        "width": 257,
+        "height": 318,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 514,
+        "y": 0,
+        "width": 257,
+        "height": 318,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 771,
+        "y": 0,
+        "width": 257,
+        "height": 318,
+        "bounds": [0, 0, 1, 1]
+      }
+    ]
+  },
+  "student.female3.cling": {
+    "url": "/games/dog-chase/hs/nu3_baucay.webp",
+    "frames": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 209,
+        "height": 312,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 209,
+        "y": 0,
+        "width": 209,
+        "height": 312,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 418,
+        "y": 0,
+        "width": 209,
+        "height": 312,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 627,
+        "y": 0,
+        "width": 209,
+        "height": 312,
+        "bounds": [0, 0, 1, 1]
+      }
+    ]
+  },
+  "dog.sleep": {
+    "url": "/games/dog-chase/cho/ngu.webp",
+    "frames": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 204,
+        "height": 155,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 204,
+        "y": 0,
+        "width": 204,
+        "height": 155,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 408,
+        "y": 0,
+        "width": 204,
+        "height": 155,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 612,
+        "y": 0,
+        "width": 204,
+        "height": 155,
+        "bounds": [0, 0, 1, 1]
+      }
+    ]
+  },
+  "dog.growl": {
+    "url": "/games/dog-chase/cho/gamgu.webp",
+    "frames": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 221,
+        "height": 227,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 221,
+        "y": 0,
+        "width": 221,
+        "height": 227,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 442,
+        "y": 0,
+        "width": 221,
+        "height": 227,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 663,
+        "y": 0,
+        "width": 221,
+        "height": 227,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 884,
+        "y": 0,
+        "width": 221,
+        "height": 227,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 1105,
+        "y": 0,
+        "width": 221,
+        "height": 227,
+        "bounds": [0, 0, 1, 1]
+      }
+    ]
+  },
+  "dog.bark": {
+    "url": "/games/dog-chase/cho/sua.webp",
+    "frames": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 312,
+        "height": 252,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 312,
+        "y": 0,
+        "width": 312,
+        "height": 252,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 624,
+        "y": 0,
+        "width": 312,
+        "height": 252,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 936,
+        "y": 0,
+        "width": 312,
+        "height": 252,
+        "bounds": [0, 0, 1, 1]
+      }
+    ]
+  },
+  "dog.run": {
+    "url": "/games/dog-chase/cho/chay.webp",
+    "frames": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 233,
+        "height": 240,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 233,
+        "y": 0,
+        "width": 233,
+        "height": 240,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 466,
+        "y": 0,
+        "width": 233,
+        "height": 240,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 699,
+        "y": 0,
+        "width": 233,
+        "height": 240,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 932,
+        "y": 0,
+        "width": 233,
+        "height": 240,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 1165,
+        "y": 0,
+        "width": 233,
+        "height": 240,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 1398,
+        "y": 0,
+        "width": 233,
+        "height": 240,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 1631,
+        "y": 0,
+        "width": 233,
+        "height": 240,
+        "bounds": [0, 0, 1, 1]
+      }
+    ]
+  },
+  "dog.brake": {
+    "url": "/games/dog-chase/cho/phanh.webp",
+    "frames": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 310,
+        "height": 237,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 310,
+        "y": 0,
+        "width": 310,
+        "height": 237,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 620,
+        "y": 0,
+        "width": 310,
+        "height": 237,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 930,
+        "y": 0,
+        "width": 310,
+        "height": 237,
+        "bounds": [0, 0, 1, 1]
+      }
+    ]
+  },
+  "dog.dance": {
+    "url": "/games/dog-chase/cho/dongtay.webp",
+    "frames": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 274,
+        "height": 377,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 274,
+        "y": 0,
+        "width": 274,
+        "height": 377,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 548,
+        "y": 0,
+        "width": 274,
+        "height": 377,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 822,
+        "y": 0,
+        "width": 274,
+        "height": 377,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 1096,
+        "y": 0,
+        "width": 274,
+        "height": 377,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 1370,
+        "y": 0,
+        "width": 274,
+        "height": 377,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 1644,
+        "y": 0,
+        "width": 274,
+        "height": 377,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 1918,
+        "y": 0,
+        "width": 274,
+        "height": 377,
+        "bounds": [0, 0, 1, 1]
+      }
+    ]
+  },
+  "dog.jump": {
+    "url": "/games/dog-chase/cho/nhay.webp",
+    "frames": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 236,
+        "height": 279,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 236,
+        "y": 0,
+        "width": 236,
+        "height": 279,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 472,
+        "y": 0,
+        "width": 236,
+        "height": 279,
+        "bounds": [0, 0, 1, 1]
+      },
+      {
+        "x": 708,
+        "y": 0,
+        "width": 236,
+        "height": 279,
+        "bounds": [0, 0, 1, 1]
+      }
+    ]
+  },
+  "background": {
+    "url": "/games/dog-chase/nen_hem.webp",
+    "frames": []
+  },
+  "foreground": {
+    "url": "/games/dog-chase/tiencanh.webp",
+    "frames": []
+  },
+  "shelter": {
+    "url": "/games/dog-chase/nen_hem_noi.webp",
+    "frames": []
+  },
+  "slipper": {
+    "url": "/games/dog-chase/do/dep.webp",
+    "frames": []
+  },
+  "chicken": {
+    "url": "/games/dog-chase/do/ga.webp",
+    "frames": []
+  },
+  "stars": {
+    "url": "/games/dog-chase/do/sao.webp",
+    "frames": []
+  },
+  "sleepBubble": {
+    "url": "/games/dog-chase/do/bongNgu.webp",
+    "frames": []
+  }
+}

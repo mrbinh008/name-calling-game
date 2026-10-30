@@ -1,0 +1,8 @@
+/* Hide redundant DOM tree canopy on mango-poke so canvas renders clean and unobstructed */
+.mango-canopy {
+  display: none !important;
+}
+
+.picker-shell--mango-poke {
+  background: #172820;
+}
